@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+
+    <title>IYZICO TODO</title>
+
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" />
+    <link th:href="@{/css/plugins/dataTables/dataTables.bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Enter Your Credentials</h3>
+                    </div>
+                    <div class="panel-body">
+			                	<form id="loginForm" role="form" th:action="@{/appLogin}" method="POST">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="UserName" name="app_username" type="username" autofocus="autofocus" required="required"></input>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="app_password" type="password" value="" required="required"></input>
+                                </div>
+                            </fieldset>
+                            <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
+                            <a th:href="@{/register-page}" class="btn btn-lg btn-success btn-block">Register</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/js/jquery-1.10.2.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+
+</body>
+</html>
