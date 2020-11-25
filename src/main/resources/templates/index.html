@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Verifydee</title>
+
+<link th:rel="stylesheet"
+	th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.css}" />
+	<link th:rel="stylesheet" th:href="@{/css/custom.css}" />
+<link th:rel="stylesheet"
+	th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}" />
+<link th:rel="stylesheet"
+	th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+<link th:rel="stylesheet"
+	th:href="@{webjars/font-awesome/5.11.2/css/all.css} " />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+	
+	
+</head>
+<body>
+
+	<!-- Navigation -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+		<div class="container">
+			<a class="navbar-brand" href="/">Verifydee</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive" aria-controls="navbarResponsive"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a class="nav-link" href="#">Home
+							<span class="sr-only">(current)</span>
+					</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Services</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<form method="post" th:action="@{/check-student}">
+			<div class="form-group row">
+				<div class="col-md-4 mt-5">
+					<div class="input-group">
+						<input type="text" class="form-control" id="username" name="name"
+							placeholder="Ad Soyad" />
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-4 mt-5">
+					<div class="input-group date">
+						<input type="date" class="form-control" id="birthdate" autocomplete="off" placeholder="Doğum Tarihi"/>
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-4 mt-5">
+					<div class="input-group">
+						<select id="okul" class="form-control">
+						<option value="" disabled selected hidden>Üniversite/Lise</option>>
+							<option>Üniversite</option>
+							<option>Lise</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-4 mt-5">
+					<div class="input-group">
+						<input type="text" class="form-control" id="tckn" name="tckn"
+							placeholder="Tckn" required/>
+					</div>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-md-4 mt-5">
+					<div class="input-group">
+					<label for="barkodNo"><a href="https://www.turkiye.gov.tr/"><u>e-Devlet kapısı</u></a> üzerinden aldığınız belgedeki barkod numarasını giriniz.</label>
+						<input type="text" class="form-control" id="barkodNo"
+							name="barkodNo" placeholder="BarkodNo" required/>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group form-check">
+				<label class="form-check-label"> <input class="form-check-input" type="checkbox" required> <span>
+						Burayı işaretleyerek; öğrencilik belgemi doğrulamak için verdiğim
+						MONA tarafından KVKK ve GDPR koşullarında işlem görmesine onay
+						veriyorum. </span>
+				</label>
+			</div>
+
+			<button class="btn btn-primary" type="submit">Doğrula</button>
+		</form>
+
+	</div>
+
+
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	<script
+		th:src="@{assets/bootstrap-datepicker/js/bootstrap-datepicker.js}"></script>
+	<script>
+		$('.input-group.date').datepicker({
+			autoclose : true,
+			todayHighlight : true
+		});
+	</script>
+	
+
+</body>
+</html>

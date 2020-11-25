@@ -35,10 +35,21 @@ public class UserController {
 		StudentInfoCheckResponse studentInfoCheckResponse = studentInfoService.checkStudentInfo(new StudentInfoRequest(tckn, barkodNo));
 		
 		if(studentInfoCheckResponse.isActiveStudent()) {
-			return "success";
+			return "verify-success";
 		} 
 		
-		return "error";
+		return "verify-error";
+	}
+	
+	
+	@GetMapping(value="student-check")
+	public String checkbootstrap(){
+		return "index";
+	}
+	
+	@GetMapping(value="index")
+	public String getIndex(){
+		return "index";
 	}
 	
 }
