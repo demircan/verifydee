@@ -18,5 +18,11 @@ public class StudentInfoCheckResponse {
 		
 	}
 	
+public StudentInfoCheckResponse(boolean isVerified) {
+		
+		this.activeStudent = isVerified;
+		
+	}
+	
 	
 }

@@ -28,11 +28,13 @@ public class UserController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST, value = "/check-student")
-	public String notifySubscriberChange(@RequestParam String tckn,
+	public String notifySubscriberChange(@RequestParam String name, 
+														   @RequestParam String surname,				
+														   @RequestParam String tckn,
 														   @RequestParam String barkodNo) throws Exception {
 		
-		log.info("check-student request received: tckn: {} barkodNo: {}", tckn, barkodNo);
-		StudentInfoCheckResponse studentInfoCheckResponse = studentInfoService.checkStudentInfo(new StudentInfoRequest(tckn, barkodNo));
+		log.info("check-student request received: name: {} lastname: {} tckn: {} barkodNo: {}", name, surname, tckn, barkodNo);
+		StudentInfoCheckResponse studentInfoCheckResponse = studentInfoService.getStudentVerificationInfo(new StudentInfoRequest(name, surname, tckn, barkodNo));
 		
 		if(studentInfoCheckResponse.isActiveStudent()) {
 			return "verify-success";

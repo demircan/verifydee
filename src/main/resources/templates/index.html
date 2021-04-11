@@ -6,7 +6,7 @@
 
 <link th:rel="stylesheet"
 	th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.css}" />
-	<link th:rel="stylesheet" th:href="@{/css/custom.css}" />
+<!-- 	<link th:rel="stylesheet" th:href="@{/css/custom.css}" /> -->
 <link th:rel="stylesheet"
 	th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}" />
 <link th:rel="stylesheet"
@@ -50,28 +50,18 @@
 				<div class="col-md-4 mt-5">
 					<div class="input-group">
 						<input type="text" class="form-control" id="username" name="name"
-							placeholder="Ad Soyad" />
-					</div>
-				</div>
-			</div>
-			<div class="form-group row">
-				<div class="col-md-4 mt-5">
-					<div class="input-group date">
-						<input type="date" class="form-control" id="birthdate" autocomplete="off" placeholder="Doğum Tarihi"/>
+							placeholder="Ad" />
 					</div>
 				</div>
 			</div>
 			<div class="form-group row">
 				<div class="col-md-4 mt-5">
 					<div class="input-group">
-						<select id="okul" class="form-control">
-						<option value="" disabled selected hidden>Üniversite/Lise</option>>
-							<option>Üniversite</option>
-							<option>Lise</option>
-						</select>
+						<input type="text" class="form-control" id="lastname" name="surname"
+							placeholder="Soyad" />
 					</div>
 				</div>
-			</div>
+			</div>						
 			<div class="form-group row">
 				<div class="col-md-4 mt-5">
 					<div class="input-group">
@@ -91,7 +81,7 @@
 			</div>
 
 			<div class="form-group form-check">
-				<label class="form-check-label"> <input class="form-check-input" type="checkbox" required> <span>
+				<label class="form-check-label"> <input class="form-check-input" type="checkbox"  required> <span>
 						Burayı işaretleyerek; öğrencilik belgemi doğrulamak için verdiğim
 						MONA tarafından KVKK ve GDPR koşullarında işlem görmesine onay
 						veriyorum. </span>
